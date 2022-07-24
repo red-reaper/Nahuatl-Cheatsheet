@@ -1,0 +1,499 @@
+%!TEX program = xelatex
+\documentclass[12pt]{beamer}
+% \usetheme{Madrid}
+\usetheme{Copenhagen}
+% \usecolortheme{wolverine}
+
+\usepackage[size=a4,scale=1.2]{beamerposter}
+\usepackage{polyglossia}
+
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{frametitle}[default][center]
+
+\setmainlanguage{english}
+\usepackage{tikz}
+\usepackage{fontspec}
+\usepackage{booktabs}
+\setlength{\tabcolsep}{.5em}
+\usepackage{multirow}
+\usepackage{bigdelim}
+\usepackage{threeparttable}
+\usefonttheme{serif}
+\usepackage{noto}
+
+\usepackage{multicol}
+\setlength\multicolsep{0pt}
+\setlength{\parskip}{0pt}
+
+\makeatletter
+\newcommand*{\textoverline}[1]{$\overline{\hbox{#1}}\m@th$}
+\makeatother
+
+
+\usepackage{lipsum}
+\usepackage{forest}
+
+\setlength{\leftmargini}{0.35cm}
+\setlength{\leftmarginii}{0.25cm}
+
+\newcommand{\nah}[1]{\textcolor{nahgrn}{#1}}
+\newcommand{\trs}[1]{\textcolor{nahblu}{#1}}
+
+\definecolor{nahred}{RGB}{224,32,13} 
+\definecolor{nahyel}{RGB}{148,114,16} 
+\definecolor{nahgrn}{RGB}{0,82,37} 
+\definecolor{nahblu}{RGB}{0,93,197} 
+
+\setbeamercolor{palette primary}{bg=nahred,fg=white}
+\setbeamercolor{palette secondary}{bg=nahyel,fg=white}
+\setbeamercolor{palette tertiary}{bg=nahgrn,fg=white}
+\setbeamercolor{palette quaternary}{bg=nahblu,fg=white}
+\setbeamercolor{structure}{fg=nahred} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=nahred} % TOC sections
+
+
+\usepackage[style=authortitle,isbn=false,backend=biber]{biblatex}
+\addbibresource{nahuatlbib.bib}
+
+
+\title{Nahuatl grammar}
+% \subtitle{cheat sheet}
+
+\begin{document}
+\begin{frame}%
+  {Classical Nahuatl grammar cheat sheet}{Phonology, pronouns, nouns and postpositions}
+  \begin{columns}[t]
+    \begin{column}{.23\linewidth}
+      \begin{block}{Nouns}
+      	\begin{enumerate}
+      		\item \begin{tabular}[t]{ll}
+      			% \multicolumn{3}{l}{\nah{Suffixes} \trs{be}} \\
+      			\multicolumn{2}{l}{Absolutive \trs{Suffixes}} \\
+      			sg.         & pl.                \\
+      			\trs{-tl}   & \trs{-meh}         \\
+      			\trs{-tli}  & \trs{-meh}         \\
+      			\trs{-li}   & \trs{-meh}         \\
+      			\trs{-n}    & \trs{-meh}         \\
+      			\trs{-ø}    & \trs{-meh}         \\
+      		\end{tabular}%
+      		\item \begin{tabular}[t]{lllllll}
+      			\multicolumn{7}{l}{Possession \nah{Prefixes} \& \trs{Suffixes}}    	   		      \\
+      			\cline{1-3} \cline{4-7}
+      			\multicolumn{3}{|c|}{singular} 			  & & \multicolumn{3}{|c|}{plural}		  \\
+      			&  sg. &            		  & &					&  pl. &       	  \\
+      			\nah{no-}   & noun & \trs{-ø} / \trs{-uh} & & \nah{to-}   	& noun & \trs{-huan}  \\
+      			\nah{mo-}   & noun & \trs{-ø} / \trs{-uh} & & \nah{inmo-} 	& noun & \trs{-huan}  \\
+      			\nah{i-}    & noun & \trs{-ø} / \trs{-uh} & & \nah{inin-}  	& noun & \trs{-huan}  \\
+      		\end{tabular}%
+      	\end{enumerate}
+      \end{block}
+    \end{column}
+    \begin{column}{.26\linewidth}
+      \begin{block}{Sandhi}
+        \begin{threeparttable}
+          \begin{tabular}{l@{+ }l@{> }ll}
+            \nah{tz}   & \nah{ch} & \nah{chch}\tnote{1}   & \nah{nimitz}+\nah{chiya} > \nah{nimichiya} \trs{I await you}    \\
+            \nah{ch}   & \nah{y}  & \nah{chch}\tnote{1}   & \nah{oquich}+\nah{yōtl} > \nah{oquichchōtl} \trs{manliness}     \\
+            \nah{t}    & \nah{\#} & \nah{h}               & \nah{mati}, pret.~\nah{mah} \trs{know}                          \\
+            \nah{n, m} & \nah{hu} & \nah{hu}              & \nah{am}+\nah{huālhuih} > \nah{ahuālhuih} \trs{y'all come}      \\
+            \nah{l}    & \nah{tl} & \nah{ll}              & \nah{pil}+\nah{tli} > \nah{pilli} \trs{child}                   \\
+            \nah{l}    & \nah{y}  & \nah{ll}              & \nah{pil}+\nah{yōtl} > \nah{pillōtl} \trs{childhood}            \\
+            \nah{uh}   & \nah{m}  & \nah{mm}              & \nah{cuauh}+\nah{māitl} > \nah{cuammāitl} \trs{tree-branch}     \\
+            \nah{n}    & \nah{m}  & \nah{mm}              & \nah{on}+\nah{mati} > \nah{ommati} \trs{she feels inside}       \\
+            \nah{n}    & \nah{p}  & \nah{mp}              & \nah{non}+\nah{pēhua} > \nah{nompēhua} \trs{I go forth}         \\
+            \nah{m}    & \nah{\#} & \nah{n}               & \nah{nemi}, pret.~\nah{nen} \trs{live}                          \\
+            \nah{m}    & \nah{c}  & \nah{nc}              & \nah{cem}+\nah{cah} > \nah{cencah} \trs{very}                   \\
+            \nah{m}    & \nah{ch} & \nah{nch}             & \nah{quim}+\nah{chīhua} > \nah{quinchīhua} \trs{I do them}      \\
+            \nah{m}    & \nah{cu} & \nah{ncu}             & \nah{cem}+\nah{cuemitl} > \nah{cencuemitl} \trs{one field}      \\
+            \nah{m}    & \nah{n}  & \nah{nn}              & \nah{am}+\nah{nemi} > \nah{annemi} \trs{y'all live}             \\
+            \nah{m}    & \nah{t}  & \nah{nt}              & \nah{cem}+\nah{tetl} > \nah{centetl} \trs{one stone}            \\
+            \nah{m}    & \nah{tl} & \nah{ntl}             & \nah{am}+\nah{tlapiya} > \nah{antlapiya} \trs{y'all keep stuff} \\
+            \nah{m}    & \nah{tz} & \nah{ntz}             & \nah{cem}+\nah{tzontli} > \nah{centzontli} \trs{four hundred}   \\
+            \nah{uh}   & \nah{p}  & \nah{pp}              & \nah{nāuh}+\nah{pa} > \nah{nāppa} \trs{four times}              \\
+            \nah{ch}   & \nah{tz} & \nah{tztz}\tnote{1}   & \nah{tōch}+\nah{tzintli} > \nah{tōtzintli} \trs{dear rabbit}    \\
+            \nah{tz}   & \nah{y}  & \nah{tztz}\tnote{1}   & \nah{huitz}+\nah{yoh} > \nah{huitzoh} \trs{thorny}              \\
+            \nah{n, m} & \nah{x}  & \nah{xx}\tnote{1}     & \nah{quim}+\nah{xōxa} > \nah{quixxōxa} \trs{he hexes them}      \\
+            \nah{ch}   & \nah{x}  & \nah{xx}\tnote{1}     & \nah{nēch}+\nah{xōxa} > \nah{nēxxōxa} \trs{he hexes me}         \\
+            \nah{x}    & \nah{y}  & \nah{xx}\tnote{1}     & \nah{mix}+\nah{yoh} > \nah{mixxoh} \trs{cloudy}                 \\
+            \nah{y}    & \nah{\#} & \nah{x, z}\tnote{2}{} & \nah{piya}, pret.~\nah{pix} \trs{do}                            \\
+            \nah{h}    & \nah{V}  & \nah{yV}              & \nah{ah}+\nah{oc} > \nah{ayoc} \trs{no longer}                  \\
+            \nah{z}    & \nah{y}  & \nah{zz}\tnote{1}     & \nah{ez}+\nah{yoh} > \nah{ezzoh} \trs{bloody}                   \\
+            \nah{n, m} & \nah{z}  & \nah{zz}\tnote{1}     & \nah{zan}+\nah{cē} > \nah{zazcē} \trs{just one}                 \\
+            \nah{ch}   & \nah{z}  & \nah{zz}\tnote{1}     & \nah{amēch}+\nah{zāloh} > \nah{amēzzāloh} \trs{he held y'all}   \\
+          \end{tabular}%
+          \begin{tablenotes}
+            \item[1] Rarely written as geminates.
+            \item[2] \nah{z} if it follows a \nah{z}, e.g.~\nah{celiya}, pret.~\nah{celiz} \trs{blossom}.
+
+          \end{tablenotes}
+        \end{threeparttable}
+      \end{block}
+
+    \end{column}
+    \begin{column}{.20\linewidth}
+      \begin{block}{Derivational suffixes}
+        \begin{threeparttable}
+          \begin{itemize}
+            \item \nah{-cauh}, pl.~\nah{-cahuān}  \trs{Vb-er}\tnote{1}
+            \item \nah{-huia} \trs{use N, provide N}
+            \item \nah{-(l)iztli} \trs{Vb-ing}
+            \item \nah{-lli} \trs{something Vb-ed}
+            \item \nah{-ni}, pl.~\nah{-nimeh}  \trs{Vb-er}\tnote{2}
+            \item \nah{-qui}, pl.~\nah{-queh}  \trs{Vb-er}\tnote{2}
+            \item \nah{-tia} \trs{provide with N, become N}
+            \item \nah{-yo} inalienable possession
+            \item \nah{-yoh} \trs{thing full of N}
+            \item \nah{-yōtl} \trs{N-ness, N-ship}
+          \end{itemize}
+          \begin{tablenotes}
+            \item[1] Only possessed nouns
+            \item[2] Only absolutive nouns
+          \end{tablenotes}
+        \end{threeparttable}
+      \end{block}
+      \begin{example}
+        \begin{itemize}
+          \item \nah{miqui} \trs{die}, \nah{miquiliztli} \trs{death}
+          \item \nah{nonac} \trs{my meat}, \nah{nonacayo} \trs{my flesh}
+          \item \nah{tlamati} \trs{he knows things}, \nah{tlamatini} \trs{(he is a) scholar}
+        \end{itemize}
+      \end{example}
+    \end{column}
+    \begin{column}{.23\linewidth}
+      \begin{block}{Possessive prefixes}
+        \begin{tabular}[t]{lll}
+          \multicolumn{3}{c}{Specific possessor} \\
+            & sg.       & pl.                    \\
+          1 & \nah{no-} & \nah{to-}              \\
+          2 & \nah{mo-} & \nah{amo-}             \\
+          3 & \nah{ī-}  & \nah{īn-/īm-}          \\
+        \end{tabular}
+        \qquad
+        \begin{tabular}[t]{ll}
+          \multicolumn{2}{c}{Indefinite possessor} \\
+          \nah{tē-}  & \trs{someone's}             \\
+          \nah{tla-} & \trs{something's}
+        \end{tabular}
+      \end{block}
+
+      \begin{block}{Absolutive/possessive \& number suffixes}
+        \begin{itemize}
+          \item
+                \begin{tabular}[t]{ll}
+                  \multicolumn{2}{c}{Absolutive} \\
+                  sg.         & pl.              \\
+                  \nah{C-tli} & \nah{-tin, -meh} \\
+                  \nah{V-tl}  & \nah{-(me)h}     \\
+                  \nah{l-li}  & \nah{-tin}       \\
+                  \nah{-in}   & \nah{-meh, -tin} \\
+                \end{tabular}%
+                \qquad
+                \begin{tabular}[t]{ll}
+                  \multicolumn{2}{c}{Possessive }                                   \\
+                  sg.         & pl.                                                 \\
+                  \nah{C-hui} & \multicolumn{1}{l}{\multirow{2}[0]{*}{\nah{-huān}}} \\
+                  \nah{V-uh}  &                                                     \\
+                \end{tabular}%
+          \item Absolutive: non-possessed nouns.
+          \item Possessive: nouns with a possessive prefix.
+          \item Plurals in \nah{-h} and \nah{-tin} may have reduplication of the first syllable of the stem, whose vowel is lengthened:
+                \begin{itemize}
+                  \item \nah{conētl} \trs{child}, pl.~\nah{cōconeh}
+                  \item \nah{tōchtli} \trs{rabbit}, pl.~\nah{tōtōchtin}
+                  \item \nah{cōātl} \trs{snake}, pl.~\nah{cōcōah}
+                \end{itemize}
+          \item Only animate nouns inflect for number:
+                \begin{itemize}
+                  \item \nah{cihuātl} \trs{woman}, \nah{cihuah} \trs{women}
+                  \item \nah{tetl} \trs{rock, rocks}
+                \end{itemize}
+        \end{itemize}
+      \end{block}
+      \begin{block}{Postpositions}
+        \begin{tabular}{ll}
+          \nah{-c(o)}     & \trs{in, at}                         \\
+          \nah{-ca}       & \trs{by means of, through, with}     \\
+          \nah{-huān}     & \trs{(together) with, moreover, and} \\
+          \nah{-īcampa}   & \trs{behind}                         \\
+          \nah{-ihtic}    & \trs{inside, within}                 \\
+          \nah{-īxpan}    & \trs{in front of, facing}            \\
+          \nah{-nāhuac}   & \trs{next to, close to}              \\
+          \nah{-pampa}    & \trs{because of, concerning}         \\
+          \nah{-pan}      & \trs{on, in, at}                     \\
+          \nah{-(t)icpac} & \trs{on top of}                      \\
+          \nah{-tech}     & \trs{next to, adhering to}           \\
+          \nah{-tlan}     & \trs{by, next to, below}             \\
+          \nah{-tzīntlan} & \trs{below, underneath}              \\
+        \end{tabular}%
+        \begin{itemize}
+          \item Postpositions are suffixed to posessive pronouns and nouns:
+                \begin{itemize}
+                  \item \nah{notech} \trs{next to me}
+                  \item \nah{īhuan} \trs{with it}
+                  \item \nah{tlalticpac} \trs{on the earth}
+                \end{itemize}
+          \item N-Postposition has a general indefinite meaning; \nah{ī/īm}-Postposition \nah{in} N has a specific definite meaning:
+                \begin{itemize}
+                  \item \nah{tepan} \trs{on stone(s)}
+                  \item \nah{īpan in tetl} \trs{on the stone(s)}
+                \end{itemize}
+          \item Postpositions may take the reverential suffix \nah{-tzinco}
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}%
+  {Classical Nahuatl grammar cheat sheet}{The verbal complex}
+  \begin{columns}[t]
+    \begin{column}{0.18\linewidth}
+      \begin{block}{Verb prefixes}
+        Always in this order
+        \begin{enumerate}
+          \item
+                \begin{tabular}[t]{ll}
+                  \multicolumn{2}{l}{Imperative/optative marker} \\
+                  \nah{mā}        & \trs{if, let it be}          \\
+                  \nah{tlā}       & \trs{if, let it be (please)} \\
+                  \nah{māca[mō]}  & \nah{mā + ahmō}              \\
+                  \nah{tlāca[mō]} & \nah{tlā + ahmō}             \\
+                \end{tabular}
+          \item
+                \begin{tabular}[t]{ll}
+                  \multicolumn{2}{l}{Negative marker} \\
+                  \nah{ah}   & \trs{not, un-}         \\
+                  \nah{ahmō} & \trs{not, no}          \\
+                \end{tabular}
+          \item
+                \begin{tabular}[t]{ll}
+                  \multicolumn{2}{l}{Antecessive prefix} \\
+                  \nah{ō} & \trs{already}                \\
+                \end{tabular}
+          \item
+                \begin{threeparttable}
+                  \begin{tabular}[t]{lll}
+                    \multicolumn{3}{l}{Subject pronoun}             \\
+                      & sg.                & pl.                    \\
+                    1 & \nah{ni-}          & \nah{ti-}              \\
+                    2 & \nah{ti-}\tnote{1} & \nah{am-/an-}\tnote{1} \\
+                    3 & \nah{ø-}           & \nah{ø-}               \\
+                  \end{tabular}
+                  \begin{tablenotes}
+                    \item[1] \nah{xi-} if optative
+                  \end{tablenotes}
+                \end{threeparttable}
+          \item
+                \begin{tabular}[t]{llll}
+                  \multicolumn{3}{l}{Definitive object pronoun} \\
+                    & sg.           & pl.                       \\
+                  1 & \nah{nēch-}   & \nah{tēch-}               \\
+                  2 & \nah{mitz-}   & \nah{amēch-}              \\
+                  3 & \nah{c-/qui-} & \nah{quim-/im-}           \\
+                \end{tabular}
+          \item
+                \begin{tabular}[t]{ll}
+                  \multicolumn{2}{l}{Directional marker} \\
+                  \nah{huāl} & \trs{hither}              \\
+                  \nah{on}   & \trs{thither}             \\
+                \end{tabular}
+          \item
+                \begin{tabular}[t]{llll}
+                  \multicolumn{4}{l}{Reflexive pronoun}                                                              \\
+                    & sg.                           & pl.       &                                                    \\
+                  1 & \nah{no-}                     & \nah{to-} & \trs{\hspace{-1em}\rdelim\}{3}{*}[-self, -selves]} \\
+                  2 & \multicolumn{2}{c}{\nah{mo-}}                                                                  \\
+                  3 & \multicolumn{2}{c}{\nah{mo-}}                                                                  \\
+                \end{tabular}
+          \item
+                \begin{tabular}[t]{ll}
+                  \multicolumn{2}{l}{Indefinite object pronoun} \\
+                  \nah{tē-}  & \trs{someone, people}            \\
+                  \nah{tla-} & \trs{something, stuff}           \\
+                \end{tabular}
+        \end{enumerate}
+      \end{block}
+      % \begin{block}{Iterative reduplication}
+      %   The first syllable of a verb stem may be reduplicated to make a frequentative.
+      %   \begin{enumerate}
+      %   \item 
+      %   \end{enumerate}
+
+      % \end{block}
+    \end{column}
+    \begin{column}{.18\linewidth}
+      \begin{block}{Verb classes}
+        \begin{tabular}{ll}
+          Cl 1 & Vbs in \nah{-VCCV}           \\
+          Cl 2 & Vbs in \nah{-VCV}            \\
+          Cl 3 & Vbs in \nah{-VV}             \\
+          Cl 4 & One-syllable Vbs in \nah{-a}
+        \end{tabular}\\
+        Exceptions
+        \begin{itemize}
+          \item Vbs in \nah{-Co}, \nah{-tla}, \nah{-ca}: Cl 1
+          \item Intransitive Vbs in \nah{-hua}: Cl 1
+          \item One-syllable Vbs in \nah{-i}: Cl 1
+          \item Transitive Vbs in \nah{-hua}: Cl 2
+          \item Vbs in \nah{-ya}: Cl 1 or 2
+          \item \nah{tōna} \trs{be warm}, \nah{pāca} \trs{wash}: Cl 1
+          \item \nah{zōma} \trs{become angry}: Cl 4
+        \end{itemize}
+      \end{block}
+      \begin{block}{Verbal bases}
+        B~1 is the dictionary form. Other bases are derived as follows:
+        \begin{tabular}{lll}
+               & B~2           & B~3                \\
+          Cl 1 & B~2 = B~1     & B~3 = B~1          \\
+          Cl 2 & \nah{-V > -ø} & B~3 = B~1          \\
+          Cl 3 & \nah{-V > -h} & \nah{-V₁V₂ > -V₁ː} \\
+          Cl 4 & \nah{-h}      & \nah{-V > -Vː}
+        \end{tabular}
+      \end{block}
+      \begin{example}
+        \begin{tabular}{lllll}
+               & B~1          & B~2          & B~3          &             \\
+          Cl 1 & \nah{chōca-} & \nah{chōca-} & \nah{chōca-} & \trs{cry}   \\
+          Cl 2 & \nah{yōli-}  & \nah{yōl-}   & \nah{yōli-}  & \trs{live}  \\
+          Cl 3 & \nah{āltia-} & \nah{āltih-} & \nah{āltī-}  & \trs{bathe} \\
+          Cl 4 & \nah{cua-}   & \nah{cuah-}  & \nah{cuā-}   & \trs{eat}
+        \end{tabular}
+      \end{example}
+      \begin{block}{Tense/Mood endings}
+        \begin{threeparttable}
+          \begin{tabular}{llll}
+            Tense/Mood  & B & sg.                & pl.                    \\
+            Present     & 1 & \nah{-ø}           & \nah{-h}               \\
+            Habitual    & 1 & \nah{-ni}\tnote{1} & \nah{-nih}\tnote{1}    \\
+            Imperfect   & 1 & \nah{-ya}\tnote{2} & \nah{-yah}             \\
+            Preterite   & 2 & \nah{-c}\tnote{3}  & \nah{-queh}            \\
+            Pluperfect  & 2 & \nah{-ca}          & \nah{-cah}             \\
+            Admonitive  & 2 & \nah{-h}\tnote{3}  & \nah{-(h)tin}\tnote{3} \\
+            Future      & 3 & \nah{-z}           & \nah{-zqueh}           \\
+            Optative    & 3 & \nah{-ø}           & \nah{-cān}             \\
+            Conditional & 3 & \nah{-zquiya}      & \nah{-zquiyah}
+          \end{tabular}
+          \begin{tablenotes}
+            \item[1] Preceding V lengthened
+            \item[2] Preceding V lengthened except Cl 1
+            \item[3] Only Cl 1, otherwise \nah{-ø}
+          \end{tablenotes}
+        \end{threeparttable}
+      \end{block}
+    \end{column}
+    \begin{column}{.18\linewidth}
+      \begin{block}{Irregular verbs}
+        \begin{enumerate}
+          \item \begin{tabular}[t]{lll}
+                  \multicolumn{3}{l}{\nah{cā/ye} \trs{be}} \\
+                        & sg.         & pl.                \\
+                  Pres. & \nah{cah}   & \nah{cateh}        \\
+                  Impf. & \nah{yeya}  & \nah{yeyah}        \\
+                  Pret. & \nah{catca} & \nah{catcah}       \\
+                  Fut.  & \nah{yez}   & \nah{yezqueh}      \\
+                \end{tabular}%
+          \item \begin{tabular}[t]{lll}
+                  \multicolumn{3}{l}{\nah{huītza} \trs{go}} \\
+                        & sg.          & pl.                \\
+                  Pres. & \nah{huītz}  & \nah{huītzeh}      \\
+                  Impf. & \nah{huītza} & \nah{huītzah}      \\
+                \end{tabular}%
+          \item \begin{tabular}[t]{lll}
+                  \multicolumn{3}{l}{\nah{yā/huih} \trs{come}} \\
+                        & sg.        & pl.                     \\
+                  Pres. & \nah{yauh} & \nah{huih}              \\
+                  Impf. & \nah{yāya} & \nah{yāyah}             \\
+                  Pret. & \nah{yah}  & \nah{yahqueh}           \\
+                  Fut.  & \nah{yāz}  & \nah{yāzqueh}           \\
+                \end{tabular}%
+          \item \begin{tabular}[t]{lll}
+                  \multicolumn{3}{l}{\nah{huāllā/huālhuih} \trs{come}} \\
+                        & sg.             & pl.                        \\
+                  Pres. & \nah{huāllauh}  & \nah{huālhuih}             \\
+                  Impf. & \nah{huālhuiya} & \nah{huālhuiyah}           \\
+                  Pret. & \nah{huāllah}   & \nah{huāllahqueh}          \\
+                  Fut.  & \nah{huāllaz}   & \nah{huāllazqueh}          \\
+                \end{tabular}%
+        \end{enumerate}
+      \end{block}
+    \end{column}
+    \begin{column}{.18\linewidth}
+      \begin{block}{Auxiliary verbs}
+        Auxiliary verbs specify physical position of the main verb, condition under which the main verb takes place and mark aspect, and are made as follows:
+        \begin{enumerate}
+          \item The main verb in the preterite stem
+          \item Ligature morpheme \nah{-t(i)-}
+          \item The auxiliary verb, bearing tense and number
+        \end{enumerate}
+        \begin{threeparttable}
+          \begin{tabular}{lll}
+            \multicolumn{1}{c}{Verb} & \multicolumn{2}{c}{Meaning}                            \\
+                                     & \multicolumn{1}{c}{Ind.}    & \multicolumn{1}{c}{Aux.} \\
+            \nah{cah}                & \trs{be}                    & \trs{be Vb-ing}          \\
+            \nah{ēhua}               & \trs{rise}                  & \trs{depart   Vb-ing}    \\
+            \nah{huetzi}             & \trs{fall}                  & \trs{Vb   quickly}       \\
+            \nah{huītz}              & \trs{come}                  & \trs{come   Vb-ing}      \\
+            \nah{ihcac}              & \trs{stand}                 & \trs{stand   Vb-ing}     \\
+            \nah{mani}               & \trs{be, cover}             & \trs{be Vb-ing}          \\
+            \nah{nemi}               & \trs{live}                  & \trs{go   about Vb-ing}  \\
+            \nah{(on)oc}             & \trs{lie}                   & \trs{lie   Vb-ing}       \\
+            \nah{quīza}              & \trs{emerge}                & \trs{pass   Vb-ing}      \\
+            \nah{yauh}\tnote{1}      & \trs{go}                    & \trs{be Vb-ing}          \\
+          \end{tabular}
+          \begin{tablenotes}
+            \item[1] \nah{ti+yauh} > \nah{-tiuh}
+          \end{tablenotes}
+        \end{threeparttable}
+
+      \end{block}
+      \begin{block}{Verbs of purposive motion}
+        Purposive motion suffixes take the present stem
+        \begin{tabular}{llll}
+                                       &     & \trs{Come}     & \trs{Go}          \\
+          \multirow{2}{*}{Pres./Pret.} & sg. & \nah{-co}      & \nah{-to}         \\
+                                       & pl. & \nah{-coh}     & \nah{-toh}        \\
+          \multirow{2}{*}{Future}      & sg. & \nah{-quiuh}   & \nah{-tīuh}       \\
+                                       & pl. & \nah{-quihuih} & \nah{-tīhuih}     \\
+          \multirow{2}{*}{Optative}    & sg. & \nah{-qui}     & \nah{-h,   -ti}   \\
+                                       & pl. & \nah{-quih}    & \nah{-tih,   tin} \\
+        \end{tabular}
+      \end{block}
+      \begin{block}{Verb suffixes}
+        \begin{enumerate}
+          \item
+                \begin{tabular}[t]{ll}
+                  \multicolumn{2}{l}{Causative}     \\
+                  \nah{-(l)tia} & \trs{cause to Vb}
+                \end{tabular}
+          \item
+                \begin{tabular}[t]{ll}
+                  \multicolumn{2}{l}{Passive}                                  \\
+                  \nah{-(l)o}   & \trs{\hspace{-1em}\rdelim\}{3}{*}[be Vb'ed]} \\
+                  \nah{-(o)hua} &                                              \\
+                  \nah{-hualo}  &                                              \\
+                \end{tabular}
+          \item
+                \begin{tabular}[t]{ll}
+                  \multicolumn{2}{l}{Applicative}         \\
+                  \nah{-i(l)ia} & \trs{do Vb for someone}
+                \end{tabular}
+        \end{enumerate}
+        A reflexive prefix combined with either a causative or an applicative suffix creates a reverential verb
+      \end{block}
+
+    \end{column}
+    \begin{column}{.18\linewidth}
+      \begin{example}
+        \nah{niquittato} \trs{I went to see it}
+
+      \end{example}
+      \begin{block}{Literature consulted}
+        \nocite{lockhart_NahuatlWrittenLessons2001,andrews_ClaNahuatl03,jordan_BriefNotesNahuatl}
+        \printbibliography
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vfill
+\end{frame}
+\end{document}
