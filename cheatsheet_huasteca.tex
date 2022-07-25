@@ -60,10 +60,13 @@
 \addbibresource{nahuatlbib.bib}
 
 
+\usepackage{verbatim} %In the preamble 
+
 \title{Huasteca Nahuatl}
 % \subtitle{cheat sheet}
 
 \begin{document}
+
 \begin{frame}%
   {Huasteca Nahuatl Cheatsheet}{Nouns, Adjectives, etc...}
   \begin{columns}[t]
@@ -215,70 +218,82 @@
     	\end{block}
     	
     \end{column}
-    \begin{column}{.26\linewidth}
-      \begin{block}{Verbs Tenses : Past Tense}
-      	\begin{enumerate}
-      		\item \begin{tabular}[t]{l} %CLASS 1
-      			Class \textbf{1} \nah{Prefixes} \& \trs{Suffixes}			\\
-      			\textit{a). All monosyllabic verbs except cua and pa.} 		\\
-      			\textit{b). Most, though not all verbs ending in -ca.} 		\\
-      			\textit{c). All verbs ending in consonant-consonant-vowel.} \\
-      			\textit{d). All verbs ending in -tla.} 						\\
-      			\textit{e). All verbs ending in -o.}						\\
-      		\end{tabular}
-      		\begin{tabular}[t]{lllllll}
-      			%\multicolumn{7}{l}{Class \textbf{1} \nah{Prefixes} \& \trs{Suffixes}}       	         \\
-      			\multicolumn{3}{c}{singular}    & \vline & \multicolumn{3}{c}{plural}        \\
-      			\cline{1-7}
-      			\nah{ni-}   & verb & \trs{-c}   & \vline & \nah{ti-}   & verb & \trs{-queh}  \\
-      			\nah{ti-}   & verb & \trs{-c}   & \vline & \nah{in-}   & verb & \trs{-queh}  \\
-      			\nah{ø-}    & verb & \trs{-c}   & \vline & \nah{ø-}    & verb & \trs{-queh}  \\
-      		\end{tabular}
-      		%CLASS 2
-      		\item \text{Class \textbf{2} \nah{Prefixes} \& \trs{Suffixes}} \newline
-      		\text{\textit{Most, but not all verbs ending in VCV.}}
-      		\text{A consonant is always left at the end of the root when}
-      		\text{the final vowel of the present tense form is eliminated.}
-      		\newline
-      		\begin{tabular}[t]{llll}
-      			\multicolumn{3}{c}{Root Changes} & \vline \\
-      			\cline{1-3}
-      			hu	& > & uh & \vline	\\
-      			cu	& > & uc & \vline	\\
-      			y	& > & x	 & \vline	\\
-      			qu	& > & c	 & \vline 	\\
-      			c	& > & z	 & \vline 	\\
-      			m	& > & n	 & \vline 	\\
-      		\end{tabular}%
-      		\begin{tabular}[t]{lllllll}
-      			\multicolumn{3}{c}{singular}    & \vline & \multicolumn{3}{c}{plural}        \\
-      			\cline{1-7}
-      			\nah{ni-}   & root & \trs{-c}   & \vline & \nah{ti-}   & root & \trs{-queh}  \\
-      			\nah{ti-}   & root & \trs{-c}   & \vline & \nah{in-}   & root & \trs{-queh}  \\
-      			\nah{ø-}    & root & \trs{-c}   & \vline & \nah{ø-}    & root & \trs{-queh}  \\
-      		\end{tabular}
-      		\item \begin{tabular}[t]{lllllll} %CLASS 3
-      			\multicolumn{7}{l}{Class \textbf{3} \nah{Prefixes} \& \trs{Suffixes}} 			\\
-      			\multicolumn{7}{1}{\textit{All verbs ending in -ia or -oa.}}					\\
-      			\multicolumn{3}{c}{singular}    & \vline & \multicolumn{3}{c}{plural}        	\\
-      			\cline{1-7}
-      			\nah{ni-}   & root & \trs{-hqui}   & \vline & \nah{ti-}   & root & \trs{-hqueh} \\
-      			\nah{ti-}   & root & \trs{-hqui}   & \vline & \nah{in-}   & root & \trs{-hqueh} \\
-      			\nah{ø-}    & root & \trs{-hqui}   & \vline & \nah{ø-}    & root & \trs{-hqueh} \\
-      		\end{tabular}%
-      		\item \begin{tabular}[t]{lllllll} %CLASS 4
-      			\multicolumn{7}{l}{Class \textbf{4} \nah{Prefixes} \& \trs{Suffixes}}			\\
-      			\multicolumn{7}{1}{\textit{Only pa, cua, mama, nahua, \& derivations.}}			\\
-      			\multicolumn{3}{c}{singular}    & \vline & \multicolumn{3}{c}{plural}        	\\
-      			\cline{1-7}
-      			\nah{ni-}   & verb & \trs{-hqui}   & \vline & \nah{ti-}   & verb & \trs{-hqueh} \\
-      			\nah{ti-}   & verb & \trs{-hqui}   & \vline & \nah{in-}   & verb & \trs{-hqueh} \\
-      			\nah{ø-}    & verb & \trs{-hqui}   & \vline & \nah{ø-}    & verb & \trs{-hqueh} \\
-      		\end{tabular}%
-      	\end{enumerate}
-      \end{block}
-    \end{column}
 
+	%TODO The problem is in this column
+    \begin{column}{.26\linewidth}
+    	\begin{block}{Verbs Tenses : Past Tense}
+    		
+    		\begin{enumerate}
+    			
+    			\item \begin{tabular}[t]{l} %CLASS 1
+    				Class \textbf{1} \nah{Prefixes} \& \trs{Suffixes}			\\
+    				\textit{a). All monosyllabic verbs except cua and pa.} 		\\
+    				\textit{b). Most, though not all verbs ending in -ca.} 		\\
+    				\textit{c). All verbs ending in consonant-consonant-vowel.} \\
+    				\textit{d). All verbs ending in -tla.} 						\\
+    				\textit{e). All verbs ending in -o.}						\\
+    			\end{tabular}
+    			\begin{tabular}[t]{lllllll}
+    				%\multicolumn{7}{l}{Class \textbf{1} \nah{Prefixes} \& \trs{Suffixes}}       	         \\
+    				\multicolumn{3}{c}{singular}    & \vline & \multicolumn{3}{c}{plural}        \\
+    				\cline{1-7}
+    				\nah{ni-}   & verb & \trs{-c}   & \vline & \nah{ti-}   & verb & \trs{-queh}  \\
+    				\nah{ti-}   & verb & \trs{-c}   & \vline & \nah{in-}   & verb & \trs{-queh}  \\
+    				\nah{ø-}    & verb & \trs{-c}   & \vline & \nah{ø-}    & verb & \trs{-queh}  \\
+    			\end{tabular}
+    			
+    			%CLASS 2
+    			\item \text{Class \textbf{2} \nah{Prefixes} \& \trs{Suffixes}} \newline
+    			\text{\textit{Most, but not all verbs ending in VCV.}}
+    			\text{A consonant is always left at the end of the root when}
+    			\text{the final vowel of the present tense form is eliminated.}
+    			\newline
+    			\begin{tabular}[t]{llll}
+    				\multicolumn{3}{c}{Root Changes} & \vline \\
+    				\cline{1-3}
+    				hu	& > & uh & \vline	\\
+    				cu	& > & uc & \vline	\\
+    				y	& > & x	 & \vline	\\
+    				qu	& > & c	 & \vline 	\\
+    				c	& > & z	 & \vline 	\\
+    				m	& > & n	 & \vline 	\\
+    			\end{tabular}%
+    			\begin{tabular}[t]{lllllll}
+    				\multicolumn{3}{c}{singular}    & \vline & \multicolumn{3}{c}{plural}        \\
+    				\cline{1-7}
+    				\nah{ni-}   & root & \trs{-c}   & \vline & \nah{ti-}   & root & \trs{-queh}  \\
+    				\nah{ti-}   & root & \trs{-c}   & \vline & \nah{in-}   & root & \trs{-queh}  \\
+    				\nah{ø-}    & root & \trs{-c}   & \vline & \nah{ø-}    & root & \trs{-queh}  \\
+    			\end{tabular}
+    			%CLASS 3
+    			\item Class \textbf{3} \nah{Prefixes} \& \trs{Suffixes} 			\\
+    			\textit{All verbs ending in -ia or -oa.}							\\
+    			\begin{tabular}[t]{lllllll}
+    				%\multicolumn{7}{l}{Class \textbf{3} \nah{Prefixes} \& \trs{Suffixes}} 			\\
+    				%\multicolumn{7}{1}{\textit{All verbs ending in -ia or -oa.}}					\\
+    				\multicolumn{3}{c}{singular}    & \vline & \multicolumn{3}{c}{plural}        	\\
+    				\cline{1-7}
+    				\nah{ni-}   & root & \trs{-hqui}   & \vline & \nah{ti-}   & root & \trs{-hqueh} \\
+    				\nah{ti-}   & root & \trs{-hqui}   & \vline & \nah{in-}   & root & \trs{-hqueh} \\
+    				\nah{ø-}    & root & \trs{-hqui}   & \vline & \nah{ø-}    & root & \trs{-hqueh} \\
+    			\end{tabular}%
+    			%CLASS 4
+    			\item Class \textbf{4} \nah{Prefixes} \& \trs{Suffixes} \\
+    			\textit{Only pa, cua, mama, nahua, \& derivations.}		\\
+    			\begin{tabular}[t]{lllllll} 
+    				%\multicolumn{7}{l}{Class \textbf{4} \nah{Prefixes} \& \trs{Suffixes}}			\\
+    				%\multicolumn{7}{1}{\textit{Only pa, cua, mama, nahua, \& derivations.}}			\\
+    				\multicolumn{3}{c}{singular}    & \vline & \multicolumn{3}{c}{plural}        	\\
+    				\cline{1-7}
+    				\nah{ni-}   & verb & \trs{-hqui}   & \vline & \nah{ti-}   & verb & \trs{-hqueh} \\
+    				\nah{ti-}   & verb & \trs{-hqui}   & \vline & \nah{in-}   & verb & \trs{-hqueh} \\
+    				\nah{ø-}    & verb & \trs{-hqui}   & \vline & \nah{ø-}    & verb & \trs{-hqueh} \\
+    			\end{tabular}
+    			
+    		\end{enumerate}
+    		
+    	\end{block}
+    \end{column}
     \begin{column}{.20\linewidth}
       \begin{block}{Derivational suffixes}
       	\begin{threeparttable}
@@ -341,6 +356,7 @@
     \end{column}
   \end{columns}
 \end{frame}
+
 
 \begin{frame}%
 	{Huasteca Nahuatl Cheatsheet}{Verbs}
